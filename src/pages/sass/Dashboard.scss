@@ -1,3 +1,8 @@
+@import "../../util/style/variables";
+@import "../../util/style/reset";
+@import "../../util/style/components";
+
 .dashboard {
-    color: aqua;
+    background-color: $color-background;
+    @include flexBox(row);
 }

@@ -1,0 +1,35 @@
+@import "../../util/style/components";
+@import "../../util/style/variables";
+
+.nav {
+    // border: 2px solid #fc332f7a;
+    @include flexBox(column);
+    justify-content: space-between;
+    min-height: 94vh;
+    margin: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: $box-shadow;
+    #{&}__upper {
+        // align-items: center;
+    }
+}
+.nav__logo {
+    color: $color-icon-btn;
+    @include flexCenter;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.nav__icon {
+    color: $color-icon-btn;
+}
+.nav__BoxContent {
+    margin-top: 7px;
+    font-size: 10px;
+}
+.nav__footer,
+.nav__itemBox {
+    @include flexCenter;
+}

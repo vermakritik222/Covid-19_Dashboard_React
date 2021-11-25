@@ -1,10 +1,11 @@
 import React from "react";
+import Nav from "../components/Nav";
 import "./sass/Dashboard.scss";
 
 function Dashboard() {
   return (
     <div className="dashboard">
-      <h1>Hello From Dashboard</h1>
+      <Nav />
     </div>
   );
 }
