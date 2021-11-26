@@ -9,14 +9,12 @@
     border-radius: 20px;
     margin: 10px;
     align-items: center;
-    // justify-content: center;
     height: 100px;
-    // width: 260px;
     box-shadow: $box-shadow;
     cursor: pointer;
     transition: transform 400ms ease-in-out;
     &:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
     }
 }
 .countCard__content {
@@ -24,7 +22,7 @@
     margin-left: 7px;
     margin-top: 7px;
     > .countCard__title {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
         text-transform: capitalize;
         text-align: center;
         color: $color-txt-secondary;
@@ -37,9 +35,8 @@
         }
     }
     > .countCard_data {
-        // font-family: "M PLUS 1c", sans-serif;
         font-family: "Roboto Mono", monospace;
-        font-size: 1.85rem;
+        font-size: 1.5rem;
         font-weight: 600;
     }
 }
@@ -48,5 +45,5 @@
     align-items: center;
     justify-content: center;
     margin-right: 5px;
-    margin-left: 5px;
+    // margin-left: 5px;
 }

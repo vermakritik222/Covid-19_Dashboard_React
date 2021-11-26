@@ -1,8 +1,12 @@
 import { ButtonBase, IconButton } from "@material-ui/core";
 import {
+  AccountBox,
   DashboardOutlined,
+  Help,
+  Home,
   PlayCircleFilled,
   PlaylistPlay,
+  Settings,
 } from "@material-ui/icons";
 import React from "react";
 import "./sass/Nav.scss";
@@ -19,66 +23,103 @@ function Nav() {
     zIndex: "999",
   };
   const mouseOver = function (e) {
-    e.target.style.backgroundColor = "#fc312f7a";
+    if (e.target.type === "button") {
+      e.target.style.backgroundColor = "#fc312f7a";
+    } else {
+      if (e.target.localName === "path") {
+        e.target.style.backgroundColor = "rgba(255, 255, 255, 0)";
+      } else if (e.target.classList[1] === "nav__icon") {
+        e.target.style.backgroundColor = "rgba(255, 255, 255, 0)";
+      } else if (e.target.localName === "svg") {
+        e.target.style.backgroundColor = "rgba(255, 255, 255, 0)";
+      }
+      e.relatedTarget.style.backgroundColor = "#fc312f7a";
+      console.log(
+        e.target.classList[1] === "nav__icon",
+        e.target,
+        e.target.localName === "path"
+      );
+    }
   };
+
   const mouseOut = (e) => {
-    e.target.style.backgroundColor = "";
+    if (e.target.type === "button") {
+      e.target.style.backgroundColor = "";
+    } else {
+      if (e.target.localName === "path") {
+        e.target.style.backgroundColor = "rgba(255, 255, 255, 0)";
+      } else if (e.target.classList[1] === "nav__icon") {
+        e.target.style.backgroundColor = "rgba(255, 255, 255, 0)";
+      } else if (e.target.localName === "svg") {
+        e.target.style.backgroundColor = "rgba(255, 255, 255, 0)";
+      }
+      e.relatedTarget.style.backgroundColor = "";
+    }
   };
   return (
     <div className="nav">
       <div className="nav__upper">
         <div className="nav__logo">
-          <PlayCircleFilled />
+          <PlayCircleFilled
+            color="error"
+            style={{ fontSize: "40px", cursor: "pointer" }}
+          />
         </div>
         <div className="nav__items">
           <div className="nav__itemBox">
             <ButtonBase
+              startIcon={<Home />}
               style={btnStyle}
+              className="nav__btns"
               onMouseOver={(e) => mouseOver(e)}
               onMouseOut={(e) => mouseOut(e)}
             >
-              <DashboardOutlined className="nav__icon" />
-              <h6 className="nav__BoxContent"> COVID </h6>
+              <Home className="nav__icon" />
+              <h6 className="nav__BoxContent">Home</h6>
             </ButtonBase>
           </div>
           <div className="nav__itemBox">
             <ButtonBase
               style={btnStyle}
+              className="nav__btns"
               onMouseOver={(e) => mouseOver(e)}
               onMouseOut={(e) => mouseOut(e)}
             >
               <DashboardOutlined className="nav__icon" />
-              <h6 className="nav__BoxContent">Track COVID </h6>
+              <h6 className="nav__BoxContent">Tracker </h6>
             </ButtonBase>
           </div>
           <div className="nav__itemBox">
             <ButtonBase
               style={btnStyle}
+              className="nav__btns"
               onMouseOver={(e) => mouseOver(e)}
               onMouseOut={(e) => mouseOut(e)}
             >
-              <DashboardOutlined className="nav__icon" />
-              <h6 className="nav__BoxContent">Track COVID </h6>
+              <AccountBox className="nav__icon" />
+              <h6 className="nav__BoxContent">About Us</h6>
             </ButtonBase>
           </div>
           <div className="nav__itemBox">
             <ButtonBase
               style={btnStyle}
+              className="nav__btns"
               onMouseOver={(e) => mouseOver(e)}
               onMouseOut={(e) => mouseOut(e)}
             >
-              <DashboardOutlined className="nav__icon" />
-              <h6 className="nav__BoxContent">Track COVID </h6>
+              <Help className="nav__icon" />
+              <h6 className="nav__BoxContent">Help</h6>
             </ButtonBase>
           </div>
           <div className="nav__itemBox">
             <ButtonBase
               style={btnStyle}
+              className="nav__btns"
               onMouseOver={(e) => mouseOver(e)}
               onMouseOut={(e) => mouseOut(e)}
             >
-              <DashboardOutlined className="nav__icon" />
-              <h6 className="nav__BoxContent">Track COVID </h6>
+              <Settings className="nav__icon" />
+              <h6 className="nav__BoxContent">Settings</h6>
             </ButtonBase>
           </div>
         </div>

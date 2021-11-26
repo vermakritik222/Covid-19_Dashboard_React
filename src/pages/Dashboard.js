@@ -1,9 +1,13 @@
 import React from "react";
 import CountCard from "../components/CountCard";
+import MapCard from "../components/MapCard";
 import Nav from "../components/Nav";
 import "./sass/Dashboard.scss";
 
 function Dashboard() {
+  const totalCases = [
+    0, 2200, 2500, 9600, 8500, 7800, 6100, 5500, 7700, 7800, 7900, 800,
+  ];
   const data = [
     0, 2200, 3400, 3600, 4500, 4800, 5100, 5500, 6700, 7800, 7200, 9900,
   ];
@@ -17,7 +21,7 @@ function Dashboard() {
             title="total cases"
             color="#fc312f"
             data="3,09,564"
-            graphData={data}
+            graphData={totalCases}
             graphDataLabels={labels}
           />
           <CountCard
@@ -43,6 +47,7 @@ function Dashboard() {
             graphDataLabels={labels}
           />
         </div>
+        <MapCard />
       </div>
     </div>
   );

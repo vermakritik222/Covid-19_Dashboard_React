@@ -2,7 +2,8 @@
 @import "../../util/style/variables";
 
 .nav {
-    // border: 2px solid #fc332f7a;
+    // position: absolute;
+    // left: -120px;
     @include flexBox(column);
     justify-content: space-between;
     min-height: 94vh;
@@ -17,7 +18,7 @@
     }
 }
 .nav__logo {
-    color: $color-icon-btn;
+    // color: $color-icon-btn;
     @include flexCenter;
     margin-top: 10px;
     margin-bottom: 20px;
@@ -25,9 +26,14 @@
 .nav__icon {
     color: $color-icon-btn;
 }
+.nav__btns:hover .nav__BoxContent,
+.nav__btns:hover .nav__icon {
+    color: white;
+}
 .nav__BoxContent {
     margin-top: 7px;
     font-size: 10px;
+    color: $color-txt-secondary;
 }
 .nav__footer,
 .nav__itemBox {

@@ -1,0 +1,16 @@
+@import "../../util/style/variables";
+
+.mapCard {
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: $box-shadow;
+}
+.mapCard__title {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.mapCard__content {
+    // border-right: 2px solid $color-txt-secondary;
+}
