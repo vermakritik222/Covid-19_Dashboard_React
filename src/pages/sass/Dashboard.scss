@@ -6,3 +6,12 @@
     background-color: $color-background;
     @include flexBox(row);
 }
+.dashboard__body {
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.dashboard__body-sec1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

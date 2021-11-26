@@ -1,0 +1,52 @@
+@import "../../util/style/components";
+@import "../../util/style/variables";
+@import "../../util/style/fonts";
+
+.countCard {
+    background-color: white;
+    padding: 7px;
+    display: flex;
+    border-radius: 20px;
+    margin: 10px;
+    align-items: center;
+    // justify-content: center;
+    height: 100px;
+    // width: 260px;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+    transition: transform 400ms ease-in-out;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+.countCard__content {
+    height: 100%;
+    margin-left: 7px;
+    margin-top: 7px;
+    > .countCard__title {
+        font-size: 1.1rem;
+        text-transform: capitalize;
+        text-align: center;
+        color: $color-txt-secondary;
+        display: flex;
+        align-items: center;
+        letter-spacing: 1px;
+        font-family: "M PLUS 1c", sans-serif;
+        > .countCard__title-span {
+            margin-top: 5px;
+        }
+    }
+    > .countCard_data {
+        // font-family: "M PLUS 1c", sans-serif;
+        font-family: "Roboto Mono", monospace;
+        font-size: 1.85rem;
+        font-weight: 600;
+    }
+}
+.countCard__graph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    margin-left: 5px;
+}
