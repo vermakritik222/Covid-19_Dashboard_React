@@ -1,5 +1,6 @@
 @import "../../util/style/variables";
-
+@import "../../util/style/components";
+@import "../../util/style/fonts";
 .mapCard {
     margin: 10px;
     padding: 10px;
@@ -8,9 +9,20 @@
     box-shadow: $box-shadow;
 }
 .mapCard__title {
+    font-family: "M PLUS 1", sans-serif;
     margin-left: 10px;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 .mapCard__content {
+    display: flex;
+    align-items: center;
     // border-right: 2px solid $color-txt-secondary;
+}
+.mapCard__topAreas {
+    height: 100%;
+    @include flexBox(column);
+    justify-content: space-between;
+    // border: 2px solid gray;
+    padding: 15px;
 }

@@ -2,11 +2,10 @@
 @import "../../util/style/variables";
 
 .nav {
-    // position: absolute;
-    // left: -120px;
+    position: sticky;
     @include flexBox(column);
     justify-content: space-between;
-    min-height: 94vh;
+    height: 96vh;
     margin: 15px;
     box-sizing: border-box;
     background-color: white;
@@ -18,7 +17,6 @@
     }
 }
 .nav__logo {
-    // color: $color-icon-btn;
     @include flexCenter;
     margin-top: 10px;
     margin-bottom: 20px;

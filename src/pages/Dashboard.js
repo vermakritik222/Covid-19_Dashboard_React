@@ -2,6 +2,7 @@ import React from "react";
 import CountCard from "../components/CountCard";
 import MapCard from "../components/MapCard";
 import Nav from "../components/Nav";
+import RecoveryCard from "../components/RecoveryCard";
 import "./sass/Dashboard.scss";
 
 function Dashboard() {
@@ -48,6 +49,9 @@ function Dashboard() {
           />
         </div>
         <MapCard />
+      </div>
+      <div className="dashboard__body__right">
+        <RecoveryCard affected={"302.8"} recovered={"95.7"} present={"64.8"} />
       </div>
     </div>
   );

@@ -25,8 +25,8 @@ function CountCard(props) {
       </div>
       <div className="countCard__graph">
         <Line
-          height={90}
-          width={110}
+          height={80}
+          width={100}
           data={{
             // labels: ["red", "blue", "green", "purple", "pink"],
             labels: graphDataLabels,

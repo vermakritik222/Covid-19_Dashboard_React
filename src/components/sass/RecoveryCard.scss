@@ -1,0 +1,40 @@
+@import "../../util/style/loader";
+@import "../../util/style/variables";
+// @include loaderSize(200px, 200px);
+.recoveryCard__heading {
+    margin-top: 10px;
+    text-align: center;
+}
+.recoveryCard {
+    margin: 20px;
+    padding: 10px;
+    transition: transform 400ms ease-in-out;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: $box-shadow;
+
+    &:hover {
+        transform: scale(1.04);
+    }
+}
+
+.recoveryCard__data {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    > .recoveryCard__affected,
+    > .recoveryCard__recovered {
+        font-weight: 600;
+        color: $color-txt-secondary;
+    }
+    > .recoveryCard__affected {
+        margin-left: 20px;
+    }
+    > .recoveryCard__recovered {
+        margin-right: 20px;
+    }
+}
+.progress-loader {
+    margin: 20px 60px 20px 60px !important;
+}

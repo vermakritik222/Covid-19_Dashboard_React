@@ -1,0 +1,36 @@
+@import "../../util/style/components";
+@import "../../util/style/variables";
+@import "../../util/style/fonts";
+@import "../../util/style/loader";
+
+@include loaderSize(60px, 60px);
+
+.topAreaCard {
+    display: flex;
+    padding: 10px;
+    border: 2px solid rgba(214, 214, 214, 0.363);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    // box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: $box-shadow-1;
+}
+.topAreaCard__content {
+    > .topAreaCard__title {
+        text-transform: capitalize;
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+    > .topAreaCard__mainbox {
+        @include flexBox(row);
+        > .topAreaCard__affected,
+        > .topAreaCard__recorded {
+            font-weight: 500;
+            font-family: sans-serif;
+            color: $color-txt-secondary;
+            margin-right: 15px;
+            text-transform: capitalize;
+        }
+    }
+}
