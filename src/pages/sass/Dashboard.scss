@@ -7,11 +7,26 @@
     @include flexBox(row);
 }
 .dashboard__body {
-    margin-top: 10px;
+    @include flexBox(column);
+    align-items: center;
+    // justify-content: space-between;
+    // margin-top: 10px;
     padding-top: 10px;
+    // margin-bottom: 30px;
 }
 .dashboard__body-sec1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+.dashboard__body-sec2 {
+    height: 80%;
+    @include flexCenter;
+}
+.dashboard__body-sec1-cover {
+    height: 20%;
+    @include flexCenter;
+}
+.dashboard__body__right {
+    width: 22.6rem;
 }

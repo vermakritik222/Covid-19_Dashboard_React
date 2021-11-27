@@ -1,0 +1,33 @@
+@import "../../util/style/variables";
+@import "../../util/style/components";
+
+.donationCard {
+    @include flexBox(column);
+    margin: 50px 20px 20px 20px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: $box-shadow;
+}
+.donationCard__img {
+    object-fit: contain;
+    height: 170px;
+}
+.donationCard__title {
+    margin: 20px 15px 20px 15px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.donationCard__donate {
+    margin-left: 15px;
+    // align-items: center;
+    @include flexBox(row);
+    > h3 {
+        margin-right: 7px;
+        color: $color-green-txt;
+    }
+    > .donationCard__donate-arrow {
+        margin-top: 3px;
+        color: $color-green-txt;
+    }
+}

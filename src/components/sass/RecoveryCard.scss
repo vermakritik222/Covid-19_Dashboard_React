@@ -1,12 +1,14 @@
 @import "../../util/style/loader";
 @import "../../util/style/variables";
+@import "../../util/style/components";
 // @include loaderSize(200px, 200px);
 .recoveryCard__heading {
     margin-top: 10px;
     text-align: center;
 }
 .recoveryCard {
-    margin: 20px;
+    margin: 20px 20px 20px 20px;
+    // margin-top: 30px;
     padding: 10px;
     transition: transform 400ms ease-in-out;
     border-radius: 20px;
@@ -35,6 +37,6 @@
         margin-right: 20px;
     }
 }
-.progress-loader {
-    margin: 20px 60px 20px 60px !important;
+.recoveryCard__progress-loader {
+    @include flexCenter;
 }

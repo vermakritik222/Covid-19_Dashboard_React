@@ -11,7 +11,7 @@ function MapCard() {
         <div className="mapCard__map">
           <Chart
             width={555}
-            height={300}
+            height={450}
             chartType="GeoChart"
             loader={<div>Loading Chart</div>}
             data={[
@@ -41,21 +41,27 @@ function MapCard() {
         <div className="mapCard__topAreas">
           <TopAreaCard
             color="#48b375"
-            affected="20,003k"
-            recorded="3,230k"
-            country="china"
+            affected="49,050k"
+            recorded="47,328k"
+            country="USA"
           />
           <TopAreaCard
             color="#484879"
-            affected="23,053k"
-            recorded="9,550k"
-            country="Italy"
+            affected="34,053k"
+            recorded="32,550k"
+            country="India"
           />
           <TopAreaCard
             color="red"
-            affected="83,174k"
-            recorded="5,306k"
-            country="USA"
+            affected="22,574k"
+            recorded="18,306k"
+            country="Brazil"
+          />
+          <TopAreaCard
+            color="violet"
+            affected="10,174k"
+            recorded="7,306k"
+            country="UK"
           />
         </div>
       </div>

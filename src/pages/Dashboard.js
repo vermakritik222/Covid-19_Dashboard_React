@@ -3,6 +3,7 @@ import CountCard from "../components/CountCard";
 import MapCard from "../components/MapCard";
 import Nav from "../components/Nav";
 import RecoveryCard from "../components/RecoveryCard";
+import DonationCard from "../components/DonationCard";
 import "./sass/Dashboard.scss";
 
 function Dashboard() {
@@ -17,41 +18,47 @@ function Dashboard() {
     <div className="dashboard">
       <Nav />
       <div className="dashboard__body">
-        <div className="dashboard__body-sec1">
-          <CountCard
-            title="total cases"
-            color="#fc312f"
-            data="3,09,564"
-            graphData={totalCases}
-            graphDataLabels={labels}
-          />
-          <CountCard
-            title="recovered"
-            color="#49a571"
-            data="95,829"
-            dec
-            graphData={data}
-            graphDataLabels={labels}
-          />
-          <CountCard
-            title="active cases"
-            color="#fc312f"
-            data="1,99,564"
-            graphData={data}
-            graphDataLabels={labels}
-          />
-          <CountCard
-            title="total death"
-            color="#fc312f"
-            data="13,064"
-            graphData={data}
-            graphDataLabels={labels}
-          />
+        <div className="dashboard__body-sec1-cover">
+          <div className="dashboard__body-sec1">
+            <CountCard
+              title="total cases"
+              color="#fc312f"
+              data="3,09,564"
+              graphData={totalCases}
+              graphDataLabels={labels}
+            />
+            <CountCard
+              title="recovered"
+              color="#49a571"
+              data="95,829"
+              dec
+              graphData={data}
+              graphDataLabels={labels}
+            />
+            <CountCard
+              title="active cases"
+              color="#fc312f"
+              data="1,99,564"
+              graphData={data}
+              graphDataLabels={labels}
+            />
+            <CountCard
+              title="total death"
+              color="#fc312f"
+              data="13,064"
+              graphData={data}
+              graphDataLabels={labels}
+            />
+          </div>
         </div>
-        <MapCard />
+
+        <div className="dashboard__body-sec2">
+          <MapCard />
+        </div>
       </div>
       <div className="dashboard__body__right">
         <RecoveryCard affected={"302.8"} recovered={"95.7"} present={"64.8"} />
+        <DonationCard />
       </div>
     </div>
   );
