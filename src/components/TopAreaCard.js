@@ -14,8 +14,12 @@ function TopAreaCard(props) {
       <div className="topAreaCard__content">
         <h2 className="topAreaCard__title">{country}</h2>
         <div className="topAreaCard__mainbox">
-          <div className="topAreaCard__affected">{`Affected - ${affected}`}</div>
-          <div className="topAreaCard__recorded">{`recorded - ${recorded}`}</div>
+          <div className="topAreaCard__affected">
+            Affected - <span className="topAreaCard__number">{affected}</span>{" "}
+          </div>
+          <div className="topAreaCard__recorded">
+            recorded - <span className="topAreaCard__number">{recorded}</span>{" "}
+          </div>
         </div>
       </div>
     </div>
