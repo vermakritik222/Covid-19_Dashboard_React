@@ -18,7 +18,7 @@ function TopAreaCard(props) {
             Affected - <span className="topAreaCard__number">{affected}</span>{" "}
           </div>
           <div className="topAreaCard__recorded">
-            recorded - <span className="topAreaCard__number">{recorded}</span>{" "}
+            Recovered - <span className="topAreaCard__number">{recorded}</span>{" "}
           </div>
         </div>
       </div>

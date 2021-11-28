@@ -27,8 +27,8 @@ function RecoveryCard(props) {
         </div>
       </div>
       <div className="recoveryCard__data">
-        <div className="recoveryCard__affected">{`${affected}k Affected`}</div>
-        <div className="recoveryCard__recovered">{`${recovered}k Recovered`}</div>
+        <div className="recoveryCard__affected">{`${affected} Affected`}</div>
+        <div className="recoveryCard__recovered">{`${recovered} Recovered`}</div>
       </div>
     </div>
   );

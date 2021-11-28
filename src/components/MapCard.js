@@ -3,7 +3,9 @@ import "./sass/MapCard.scss";
 import { Chart } from "react-google-charts";
 import TopAreaCard from "./TopAreaCard";
 
-function MapCard() {
+function MapCard(props) {
+  const { Data, DataTop } = props;
+  console.log(DataTop);
   return (
     <div className="mapCard">
       <h2 className="mapCard__title">COVID - 19 Affected Areas </h2>
@@ -14,23 +16,24 @@ function MapCard() {
             height={450}
             chartType="GeoChart"
             loader={<div>Loading Chart</div>}
-            data={[
-              ["Country", "Popularity"],
-              ["Germany", 200],
-              ["United States", 300],
-              ["Brazil", 400],
-              ["india", 500],
-              ["pakistan", 300],
-              ["china", 800],
-              ["italy", 600],
-              ["russia", 500],
-              ["Australia", 488],
-              ["japan", 390],
-            ]}
+            data={Data}
+            // data={[
+            // ["Country", "Data"],
+            // ["Bahamas", 200],
+            // ["Macedonia", 300],
+            // ["Vatican", 400],
+            // ["Micronesia", 500],
+            // ["Kosovo", 300],
+            // ["Taiwan", 800],
+            // ["Tanzania", 600],
+            // ["Venezuela", 500],
+            //   ["United Arab Emirates", 488],
+            //   ["Zimbabwe", 390],
+            // ]}
             options={{
               intervals: { style: "sticks" },
               legend: "none",
-              // colorAxis: { colors: ["#00853f", "black", "#e31b23"] },
+              colorAxis: { colors: ["#48b375", "#fc312f"] },
               // backgroundColor: "#ffc4c4",
               // datalessRegionColor: "#f8bbd0",
               // defaultColor: "#f5f5f5",
@@ -41,27 +44,35 @@ function MapCard() {
         <div className="mapCard__topAreas">
           <TopAreaCard
             color="#48b375"
-            affected="49,050k"
-            recorded="47,328k"
-            country="USA"
+            affected={`${Math.floor((DataTop[0]?.cases * 1) / 10000) / 100}M`}
+            recorded={`${
+              Math.floor((DataTop[0]?.recovered * 1) / 10000) / 100
+            }M`}
+            country={DataTop[0]?.countryInfo.iso3}
           />
           <TopAreaCard
             color="#484879"
-            affected="34,053k"
-            recorded="32,550k"
-            country="India"
+            affected={`${Math.floor((DataTop[1]?.cases * 1) / 10000) / 100}M`}
+            recorded={`${
+              Math.floor((DataTop[1]?.recovered * 1) / 10000) / 100
+            }M`}
+            country={DataTop[1]?.country}
           />
           <TopAreaCard
             color="red"
-            affected="22,574k"
-            recorded="18,306k"
-            country="Brazil"
+            affected={`${Math.floor((DataTop[2]?.cases * 1) / 10000) / 100}M`}
+            recorded={`${
+              Math.floor((DataTop[2]?.recovered * 1) / 10000) / 100
+            }M`}
+            country={DataTop[2]?.country}
           />
           <TopAreaCard
             color="violet"
-            affected="10,174k"
-            recorded="7,306k"
-            country="UK"
+            affected={`${Math.floor((DataTop[3]?.cases * 1) / 10000) / 100}M`}
+            recorded={`${
+              Math.floor((DataTop[3]?.recovered * 1) / 10000) / 100
+            }M`}
+            country={DataTop[3]?.country}
           />
         </div>
       </div>
