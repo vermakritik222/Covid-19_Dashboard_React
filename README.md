@@ -1,4 +1,4 @@
-#Covid-19 Tracker React
+# Covid-19 Tracker React
 
 <img src="./screenshots/Screenshot (583).png"/>
 
