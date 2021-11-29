@@ -5,8 +5,32 @@ import "chart.js";
 import "./sass/CountCard.scss";
 
 function CountCard(props) {
-  const { title, data, dec, color, colorbg, graphData, graphDataLabels } =
-    props;
+  const { title, data, dec, color, graphData, graphDataLabels } = props;
+
+  const dataS = (canvas) => {
+    const ctx = canvas.getContext("2d");
+    let gradient = ctx.createLinearGradient(0, 0, 300, 300);
+    gradient.addColorStop(0, color);
+    gradient.addColorStop(0.23, "rgb(255, 255, 255)");
+    return {
+      labels: graphDataLabels,
+      datasets: [
+        {
+          data: graphData,
+          fill: true,
+          backgroundColor: gradient,
+          borderColor: color,
+          borderWidth: 2,
+          borderCapStyle: "butt",
+          pointBorderWidth: 2,
+          pointHoverRadius: 3,
+          pointRadius: 1,
+          spanGaps: false,
+        },
+      ],
+    };
+  };
+
   return (
     <div className="countCard">
       <div className="countCard__content">
@@ -24,25 +48,10 @@ function CountCard(props) {
       </div>
       <div className="countCard__graph">
         <Line
+          // ref={chartRef}
           height={80}
           width={100}
-          data={{
-            labels: graphDataLabels,
-            datasets: [
-              {
-                data: graphData,
-                fill: true,
-                backgroundColor: colorbg,
-                borderColor: color,
-                borderWidth: 2,
-                borderCapStyle: "butt",
-                pointBorderWidth: 2,
-                pointHoverRadius: 3,
-                pointRadius: 1,
-                spanGaps: false,
-              },
-            ],
-          }}
+          data={dataS}
           options={{
             plugins: {
               legend: {
