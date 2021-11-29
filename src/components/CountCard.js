@@ -4,10 +4,9 @@ import { Line } from "react-chartjs-2";
 import "chart.js";
 import "./sass/CountCard.scss";
 
-// Chart.register(CategoryScale)
-
 function CountCard(props) {
-  const { title, data, dec, color, graphData, graphDataLabels } = props;
+  const { title, data, dec, color, colorbg, graphData, graphDataLabels } =
+    props;
   return (
     <div className="countCard">
       <div className="countCard__content">
@@ -28,49 +27,29 @@ function CountCard(props) {
           height={80}
           width={100}
           data={{
-            // labels: ["red", "blue", "green", "purple", "pink"],
             labels: graphDataLabels,
             datasets: [
               {
                 data: graphData,
-                fill: false,
-                backgroundColor: "#f77e7ebd",
+                fill: true,
+                backgroundColor: colorbg,
                 borderColor: color,
-                borderWidth: 4,
+                borderWidth: 2,
                 borderCapStyle: "butt",
-                pointBorderWidth: 0,
-                pointHoverRadius: 0,
-                pointRadius: 0,
+                pointBorderWidth: 2,
+                pointHoverRadius: 3,
+                pointRadius: 1,
                 spanGaps: false,
               },
             ],
           }}
           options={{
-            animations: {
-              tension: {
-                duration: 1000,
-                easing: "linear",
-                from: 0,
-                to: 0.3,
-                loop: false,
-              },
-            },
-            // legend: {
-            //   display: false,
-            // },
             plugins: {
               legend: {
                 display: false,
               },
             },
-            // tooltips: {
-            //   enabled: false,
-            //   callbacks: {
-            //     label: function (tooltipItem) {
-            //       return tooltipItem.yLabel;
-            //     },
-            //   },
-            // },
+
             responsive: true,
             maintainAspectRatio: false,
             indexAxis: "x",
@@ -79,14 +58,12 @@ function CountCard(props) {
                 display: false,
                 ticks: {
                   stepSize: 2,
-                  // fixedStepSize: 0,
                 },
               },
               y: {
                 display: false,
                 ticks: {
                   stepSize: 10000,
-                  // fixedStepSize: 0,
                 },
               },
             },

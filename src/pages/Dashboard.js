@@ -13,9 +13,50 @@ function Dashboard() {
   const [global, setGlobal] = useState([]);
   const [mapData, setMapData] = useState([]);
   const [topData, setTopData] = useState([]);
+  const [countGraph1, setCountGraph1] = useState([]);
+  const [countGraph2, setCountGraph2] = useState([]);
+  // const [countGraph3, setCountGraph3] = useState([]);
+  const [labels, setLabels] = useState([]);
 
   useEffect(() => {
     function fetchData() {
+      axios
+        .get(
+          "https://api.covid19api.com/world?from=2021-11-15T00:00:00Z&to=2021-11-29T00:00:00Z"
+        )
+        .then(function (res) {
+          const data = [];
+          res.data.forEach((el) => {
+            const tempLabel = `${el.Date.split("-")[2].split("T")[0]}-${
+              el.Date.split("-")[1]
+            }-${el.Date.split("-")[0]}`;
+            const dataTemplate = [
+              tempLabel,
+              el.TotalConfirmed,
+              el.TotalDeaths,
+              el.Date.split("-")[2].split("T")[0],
+              el.Date.split("-")[1],
+            ];
+            data.push(dataTemplate);
+          });
+          data.sort((a, b) => {
+            return a[3] - b[3];
+          });
+
+          const totalCases01 = [];
+          const totalCases02 = [];
+          const label = [];
+          data.forEach((el) => {
+            totalCases01.push(el[1]);
+            totalCases02.push(el[2]);
+            label.push(el[0]);
+          });
+          setCountGraph1(totalCases01);
+          setCountGraph2(totalCases02);
+          setLabels(label);
+          console.log(data);
+        });
+
       axios.get("https://api.covid19api.com/summary").then(function (response) {
         // console.log(response.data.Countries[0].Country);
         setGlobal(response.data.Global);
@@ -101,17 +142,16 @@ function Dashboard() {
           ];
           setTopData(countryData);
         });
+
+      console.log(countGraph1);
     }
     fetchData();
-  }, []);
+  }, [countGraph1]);
 
-  const totalCases1 = [
-    0, 2200, 2500, 9600, 8500, 7800, 6100, 5500, 7700, 7800, 7900, 800,
-  ];
   const data = [
     0, 2200, 3400, 3600, 4500, 4800, 5100, 5500, 6700, 7800, 7200, 9900,
   ];
-  const labels = [19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
+
   return (
     <div className="dashboard">
       <Nav />
@@ -121,14 +161,16 @@ function Dashboard() {
             <CountCard
               title="total cases"
               color="#fc312f"
+              colorbg="#f954511f"
               // data="3,09,564"
               data={`${Math.floor(global?.TotalConfirmed / 10000) / 100}M`}
-              graphData={totalCases1}
+              graphData={countGraph1}
               graphDataLabels={labels}
             />
             <CountCard
               title="recovered"
               color="#49a571"
+              colorbg="#49a5711f"
               data="95,829"
               // eslint-disable-next-line react/jsx-no-duplicate-props
               data={`${
@@ -143,15 +185,17 @@ function Dashboard() {
             <CountCard
               title="active cases"
               color="#fc312f"
+              colorbg="#f954511f"
               data="1,99,564"
               graphData={data}
               graphDataLabels={labels}
             />
             <CountCard
               title="total death"
+              colorbg="#f954511f"
               color="#fc312f"
               data={`${Math.floor(global?.TotalDeaths / 100) / 10}K`}
-              graphData={data}
+              graphData={countGraph2}
               graphDataLabels={labels}
             />
           </div>

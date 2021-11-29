@@ -5,7 +5,6 @@ import TopAreaCard from "./TopAreaCard";
 
 function MapCard(props) {
   const { Data, DataTop } = props;
-  console.log(DataTop);
   return (
     <div className="mapCard">
       <h2 className="mapCard__title">COVID - 19 Affected Areas </h2>

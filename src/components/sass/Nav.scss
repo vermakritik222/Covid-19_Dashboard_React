@@ -20,6 +20,10 @@
     @include flexCenter;
     margin-top: 10px;
     margin-bottom: 20px;
+    object-fit: contain;
+    > img {
+        width: 50px;
+    }
 }
 .nav__icon {
     color: $color-icon-btn;

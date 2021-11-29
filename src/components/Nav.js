@@ -4,7 +4,6 @@ import {
   DashboardOutlined,
   Help,
   Home,
-  PlayCircleFilled,
   PlaylistPlay,
   Settings,
 } from "@material-ui/icons";
@@ -60,10 +59,7 @@ function Nav() {
     <div className="nav">
       <div className="nav__upper">
         <div className="nav__logo">
-          <PlayCircleFilled
-            color="error"
-            style={{ fontSize: "40px", cursor: "pointer" }}
-          />
+          <img src="/images/coronavirus-5107715_960_720.png" alt="" />
         </div>
         <div className="nav__items">
           <div className="nav__itemBox">
